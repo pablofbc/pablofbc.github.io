@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pablo Burgos Castro - Full Stack Developer</title>
+    <meta name="description" content="Portfolio profesional de Pablo Burgos Castro - Desarrollador Full Stack">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .progress-bar {
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-slate-800" data-translate="hero.titleup">Portfolio Desarrollador</h1>
+                <div class="flex gap-4 items-center">
+                    <!-- Language Selector -->
+                    <button id="languageToggle" class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="languageText">EN</span>
+                    </button>
+                    
+                    <a href="https://github.com" target="_blank" class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        <span data-translate="nav.github">GitHub</span>
+                    </a>
+                    
+                    <a href="https://linkedin.com" target="_blank" class="flex items-center gap-2 px-3 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors">
+                        <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        <span data-translate="nav.linkedin">LinkedIn</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 px-4 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div class="container mx-auto text-center">
+            <div class="mb-8 fade-in">
+                <div class="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                    <i data-lucide="code-2" class="w-16 h-16 text-white"></i>
+                </div>
+                <h1 class="text-5xl font-bold text-slate-800 mb-2" data-translate="hero.name">Pablo Burgos Castro</h1>
+                <h2 class="text-3xl font-semibold text-blue-600 mb-4" data-translate="hero.title">Desarrollador Full Stack</h2>
+                <p class="text-xl text-slate-600 mb-8 max-w-3xl mx-auto" data-translate="hero.description">
+                    Licenciado en Administración y Gestión con sólida formación técnica en electrónica y reparación de computadoras. Especialista en desarrollo web y móvil con experiencia en tecnologías modernas, análisis de datos y arquitecturas escalables.
+                </p>
+                <div class="flex gap-4 justify-center">
+                    <button class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                        <span data-translate="hero.contact">Contactar</span>
+                    </button>
+                    <button class="flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span data-translate="hero.downloadCV">Descargar CV</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-16 px-4 bg-slate-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12 flex items-center justify-center gap-3 fade-in">
+                <i data-lucide="graduation-cap" class="w-8 h-8 text-blue-600"></i>
+                <span data-translate="education.title">Formación Académica</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <i data-lucide="award" class="w-12 h-12 text-blue-600 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="education.degree1">Licenciado en Administración y Gestión</h3>
+                    <div class="w-full h-1 bg-blue-200 rounded-full">
+                        <div class="w-full h-1 bg-blue-600 rounded-full progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <i data-lucide="settings" class="w-12 h-12 text-green-600 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="education.degree2">Técnico Electrónico</h3>
+                    <div class="w-full h-1 bg-green-200 rounded-full">
+                        <div class="w-full h-1 bg-green-600 rounded-full progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <i data-lucide="monitor" class="w-12 h-12 text-purple-600 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="education.degree3">Técnico en Reparación de Computadoras</h3>
+                    <div class="w-full h-1 bg-purple-200 rounded-full">
+                        <div class="w-full h-1 bg-purple-600 rounded-full progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <i data-lucide="book-open" class="w-12 h-12 text-orange-600 mx-auto mb-4"></i>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="education.degree4">Programador Universitario</h3>
+                    <p class="text-sm text-slate-600 mb-2" data-translate="education.degree4_detail">3 años de cursado</p>
+                    <div class="w-full h-1 bg-orange-200 rounded-full">
+                        <div class="w-3/4 h-1 bg-orange-600 rounded-full progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Profile Section -->
+    <section class="py-16 px-4 bg-gradient-to-r from-slate-50 to-blue-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4" data-translate="profile.title">Perfil Profesional</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto" data-translate="profile.description">
+                    Mi formación multidisciplinaria me permite abordar proyectos tecnológicos desde una perspectiva integral, combinando conocimientos técnicos con visión empresarial.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <div class="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="briefcase" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="profile.business.title">Gestión Empresarial</h3>
+                    <p class="text-sm text-slate-600" data-translate="profile.business.description">Experiencia en administración y gestión de proyectos</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <div class="w-16 h-16 rounded-full bg-green-50 text-green-600 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="cpu" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="profile.electronics.title">Electrónica</h3>
+                    <p class="text-sm text-slate-600" data-translate="profile.electronics.description">Sólidos conocimientos en sistemas electrónicos</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <div class="w-16 h-16 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="wrench" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="profile.hardware.title">Hardware</h3>
+                    <p class="text-sm text-slate-600" data-translate="profile.hardware.description">Especialista en reparación y mantenimiento</p>
+                </div>
+
+                <div class="bg-white rounded-lg p-6 text-center shadow-sm card-hover fade-in">
+                    <div class="w-16 h-16 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="code-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg mb-2" data-translate="profile.programming.title">Programación</h3>
+                    <p class="text-sm text-slate-600" data-translate="profile.programming.description">Desarrollo full stack con tecnologías modernas</p>
+                </div>
+            </div>
+
+            <div class="bg-white/80 backdrop-blur-sm rounded-lg p-8 fade-in">
+                <h3 class="text-xl font-semibold text-center mb-6" data-translate="profile.strengths.title">Fortalezas Clave</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm">
+                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        <span data-translate="profile.strengths.strategic">Visión estratégica</span>
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm">
+                        <i data-lucide="users" class="w-5 h-5"></i>
+                        <span data-translate="profile.strengths.teamwork">Trabajo en equipo</span>
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm">
+                        <i data-lucide="target" class="w-5 h-5"></i>
+                        <span data-translate="profile.strengths.results">Orientado a resultados</span>
+                    </span>
+                    <span class="flex items-center gap-2 px-4 py-2 bg-gray-100 rounded-full text-sm">
+                        <i data-lucide="lightbulb" class="w-5 h-5"></i>
+                        <span data-translate="profile.strengths.problem">Resolución de problemas</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12 fade-in" data-translate="technologies.title">Tecnologías y Herramientas</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="bg-white rounded-lg border shadow-sm p-6 fade-in">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="monitor" class="w-6 h-6 text-blue-600"></i>
+                        <h3 class="text-xl font-semibold" data-translate="technologies.frontend.title">Frontend</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-translate="technologies.frontend.description">Desarrollo de interfaces modernas y responsivas</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="code-2" class="w-4 h-4"></i>
+                            Angular +10
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="smartphone" class="w-4 h-4"></i>
+                            React Native - Expo
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                            Next.js
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="monitor" class="w-4 h-4"></i>
+                            TailwindCSS
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="code-2" class="w-4 h-4"></i>
+                            HTML - CSS - JavaScript
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="bg-white rounded-lg border shadow-sm p-6 fade-in">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="server" class="w-6 h-6 text-green-600"></i>
+                        <h3 class="text-xl font-semibold" data-translate="technologies.backend.title">Backend</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-translate="technologies.backend.description">APIs robustas y arquitecturas escalables</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="server" class="w-4 h-4"></i>
+                            .NET Core 8 - C# - LINQ
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="server" class="w-4 h-4"></i>
+                            Node.js
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="bg-white rounded-lg border shadow-sm p-6 fade-in">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="database" class="w-6 h-6 text-purple-600"></i>
+                        <h3 class="text-xl font-semibold" data-translate="technologies.database.title">Base de Datos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-translate="technologies.database.description">Gestión y optimización de datos</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="database" class="w-4 h-4"></i>
+                            SQL Server
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="database" class="w-4 h-4"></i>
+                            PostgreSQL
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="database" class="w-4 h-4"></i>
+                            MySQL
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Analytics -->
+                <div class="bg-white rounded-lg border shadow-sm p-6 fade-in">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="bar-chart-3" class="w-6 h-6 text-orange-600"></i>
+                        <h3 class="text-xl font-semibold" data-translate="technologies.analytics.title">Análisis de Datos</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-translate="technologies.analytics.description">Visualización y análisis de información</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="code-2" class="w-4 h-4"></i>
+                            Python
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                            Data Analytics
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
+                            Power BI
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="file-spreadsheet" class="w-4 h-4"></i>
+                            Excel
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Servers -->
+                <div class="bg-white rounded-lg border shadow-sm p-6 fade-in">
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="cloud" class="w-6 h-6 text-red-600"></i>
+                        <h3 class="text-xl font-semibold" data-translate="technologies.servers.title">Servidores</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4" data-translate="technologies.servers.description">Infraestructura y despliegue</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="cloud" class="w-4 h-4"></i>
+                            IIS Microsoft
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="settings" class="w-4 h-4"></i>
+                            Nginx
+                        </span>
+                        <span class="flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-sm">
+                            <i data-lucide="server" class="w-4 h-4"></i>
+                            Ubuntu - Debian
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 px-4 bg-slate-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12 fade-in" data-translate="projects.title">Proyectos Destacados</h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-sm border card-hover fade-in">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold" data-translate="projects.ecommerce.title">Plataforma E-commerce</h3>
+                            <i data-lucide="external-link" class="w-5 h-5 text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4" data-translate="projects.ecommerce.description">Plataforma completa de comercio electrónico con Angular frontend y .NET Core backend</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Angular</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">.NET Core</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">SQL Server</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">TailwindCSS</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors" data-translate="projects.viewProject">
+                            Ver Proyecto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border card-hover fade-in">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold" data-translate="projects.banking.title">App Bancaria Móvil</h3>
+                            <i data-lucide="external-link" class="w-5 h-5 text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4" data-translate="projects.banking.description">Aplicación móvil para banca digital desarrollada con React Native y Expo</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">React Native</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Expo</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Node.js</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">PostgreSQL</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors" data-translate="projects.viewProject">
+                            Ver Proyecto
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-sm border card-hover fade-in">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-semibold" data-translate="projects.analytics.title">Dashboard de Análisis</h3>
+                            <i data-lucide="external-link" class="w-5 h-5 text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4" data-translate="projects.analytics.description">Dashboard de análisis de datos con visualizaciones interactivas usando Power BI</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Python</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Power BI</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">SQL Server</span>
+                            <span class="px-2 py-1 border border-gray-300 rounded text-sm">Excel</span>
+                        </div>
+                        <button class="w-full px-4 py-2 border border-gray-300 rounded-md text-sm font-medium hover:bg-gray-50 transition-colors" data-translate="projects.viewProject">
+                            Ver Proyecto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4 bg-slate-800 text-white">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8 fade-in" data-translate="contact.title">¿Listo para trabajar juntos?</h2>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto fade-in" data-translate="contact.description">
+                Estoy disponible para nuevos proyectos y oportunidades de colaboración. Mi formación en administración y experiencia técnica me permiten abordar proyectos desde una perspectiva integral.
+            </p>
+            <div class="flex gap-4 justify-center fade-in">
+                <button class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span data-translate="contact.sendEmail">Enviar Email</span>
+                </button>
+                <button class="flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-800 transition-colors">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    <span data-translate="contact.viewGithub">Ver GitHub</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 bg-slate-900 text-slate-400">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 <span data-translate="footer.name">Pablo Burgos Castro</span>. <span data-translate="footer.rights">Todos los derechos reservados.</span></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/translations.js"></script>
+</body>
+</html>
