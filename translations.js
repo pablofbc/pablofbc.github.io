@@ -101,6 +101,14 @@ const translations = {
       name: "Pablo Burgos Castro",
       rights: "Todos los derechos reservados.",
     },
+    contactEmail: {
+      sendEmail: "Enviar Email",
+      modalTitle: "¿Querés escribirme?",
+      modalMessage: "Podés copiar mi dirección de email y escribirme desde tu gestor favorito.",
+      modalCopy: "Copiar",
+      modalSuccess: "¡Email copiado al portapapeles!",
+      modalClose: "Cerrar",
+    }
   },
   en: {
     nav: {
@@ -203,5 +211,13 @@ const translations = {
       name: "Pablo Burgos Castro",
       rights: "All rights reserved.",
     },
+     contactEmail: {
+      sendEmail: "Send Email",
+      modalTitle: "Want to write me?",
+      modalMessage: "You can copy my email address and send a message from your email client.",
+      modalCopy: "Copy",
+      modalSuccess: "Email copied to clipboard!",
+      modalClose: "Close",
+    }
   },
 }

@@ -14,6 +14,36 @@ const translations1 = {
 
 // Inicialización
 document.addEventListener("DOMContentLoaded", () => {
+
+  const modal = document.getElementById("emailModal");
+  const openBtn = document.getElementById("openEmailModal");
+  const closeBtn = document.getElementById("closeEmailModal");
+  const copyBtn = document.getElementById("copyEmailBtn");
+  const copyMsg = document.getElementById("copySuccess");
+  const emailText = document.getElementById("emailText").innerText;
+
+  openBtn?.addEventListener("click", () => {
+    modal.classList.remove("hidden");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    copyMsg.classList.add("hidden");
+  });
+
+  copyBtn?.addEventListener("click", () => {
+    navigator.clipboard.writeText(emailText).then(() => {
+      copyMsg.classList.remove("hidden");
+    });
+  });
+
+  // Cerrar modal si clicás fuera del contenido
+  modal?.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.add("hidden");
+      copyMsg.classList.add("hidden");
+    }
+  });
   // Inicializar iconos de Lucide
   lucide.createIcons()
 
@@ -38,6 +68,21 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Download button found, setting up event listener")
     downloadButton.addEventListener("click", downloadCV)
   }
+
+  const contactButton = document.getElementById("contactButton");
+  if (contactButton) {
+    contactButton.addEventListener("click", () => {
+      const footer = document.getElementById("contacto");
+      if (footer) {
+        footer.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  // const emailButton = document.getElementById("sendEmail");
+  // if (emailButton) {
+  //   emailButton.addEventListener("click", enviarEmail);
+  // }
 })
 
 // Cargar idioma guardado del localStorage
@@ -175,3 +220,12 @@ function downloadCV() {
   // document.body.removeChild(link);
   console.log("Se descargo el CV correctamente")
 }
+
+function enviarEmail() {
+  const destinatario = "pablofbc@gmail.com";
+  const asunto = encodeURIComponent("Consulta desde tu página");
+  const cuerpo = encodeURIComponent("Hola Pablo, me gustaría saber más sobre...");
+
+  window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+}
+

@@ -93,11 +93,11 @@
                     Licenciado en Administración y Gestión con sólida formación técnica en electrónica y reparación de computadoras. Especialista en desarrollo web y móvil con experiencia en tecnologías modernas, análisis de datos y arquitecturas escalables.
                 </p>
                 <div class="flex gap-4 justify-center">
-                    <button class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                    <button id="contactButton" class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span data-translate="hero.contact">Contactar</span>
                     </button>
-                    <button class="flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors" id="downloadCV" onclick="window.open('https://pablofbc.github.io/CV.pdf', '_blank')">
+                    <button id="downloadCV" class="flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-lg font-medium hover:bg-gray-50 transition-colors" onclick="window.open('https://pablofbc.github.io/CV.pdf', '_blank')">
                         <i data-lucide="download" class="w-5 h-5"></i>
                         <span data-translate="hero.downloadCV">Descargar CV</span>
                     </button>
@@ -425,11 +425,11 @@
                 Estoy disponible para nuevos proyectos y oportunidades de colaboración. Mi formación en administración y experiencia técnica me permiten abordar proyectos desde una perspectiva integral.
             </p>
             <div class="flex gap-4 justify-center fade-in">
-                <button class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                <button id="openEmailModal" class="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                     <span data-translate="contact.sendEmail">Enviar Email</span>
                 </button>
-                <button class="flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-800 transition-colors">
+                <button class="flex items-center gap-2 px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-800 transition-colors" onclick="window.open('https://github.com/pablofbc', '_blank')">
                     <i data-lucide="github" class="w-5 h-5"></i>
                     <span data-translate="contact.viewGithub">Ver GitHub</span>
                 </button>
@@ -438,11 +438,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-4 bg-slate-900 text-slate-400">
+    <footer id="contacto" class="py-8 px-4 bg-slate-900 text-slate-400">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 <span data-translate="footer.name">Pablo Burgos Castro</span>. <span data-translate="footer.rights">Todos los derechos reservados.</span></p>
         </div>
     </footer>
+
+
+    <!-- Email Modal -->
+    <div id="emailModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl max-w-md w-full shadow-lg relative mx-4">
+            <h2 class="text-xl font-semibold mb-4 text-gray-900 dark:text-white" data-translate="contactEmail.modalTitle">¿Querés escribirme?</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4" data-translate="contactEmail.modalMessage">Podés copiar mi dirección de email y escribirme desde tu gestor favorito.</p>
+            <div class="flex items-center justify-between bg-gray-100 dark:bg-gray-700 px-4 py-2 rounded-lg">
+            <span id="emailText" class="text-gray-900 dark:text-white select-text">pablofbc@gmail.com</span>
+            <button id="copyEmailBtn" class="text-blue-600 hover:text-blue-800 text-sm font-medium" data-translate="contactEmail.modalCopy">Copiar</button>
+            </div>
+            <p id="copySuccess" class="text-green-600 text-sm mt-2 hidden" data-translate="contactEmail.modalSuccess">¡Email copiado al portapapeles!</p>
+            <button id="closeEmailModal" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 dark:hover:text-white" aria-label="Cerrar" title="Cerrar">&times;</button>
+        </div>
+    </div>
+
 
     <!-- JavaScript -->
     <script src="main.js"></script>
