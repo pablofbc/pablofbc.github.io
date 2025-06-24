@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Configurar el botón de descarga de CV
   const downloadButton = document.getElementById("downloadCV")
   if (downloadButton) {
+    console.log("Download button found, setting up event listener")
     downloadButton.addEventListener("click", downloadCV)
   }
 })
@@ -163,13 +164,14 @@ function handleContactForm() {
 // }
 
 function downloadCV() {
-  const url = 'https://pablofbc.github.io/CV.pdf'; // PDF es el mismo
-  const fileName = getTranslation("hero.fileName"); // Nombre según idioma
+  // const url = 'https://pablofbc.github.io/CV.pdf'; // PDF es el mismo
+  // const fileName = getTranslation("hero.fileName"); // Nombre según idioma
 
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  // const link = document.createElement('a');
+  // link.href = url;
+  // link.download = fileName;
+  // document.body.appendChild(link);
+  // link.click();
+  // document.body.removeChild(link);
+  console.log("Se descargo el CV correctamente")
 }
