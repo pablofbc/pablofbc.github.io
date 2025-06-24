@@ -108,6 +108,7 @@ const translations = {
       modalCopy: "Copiar",
       modalSuccess: "¡Email copiado al portapapeles!",
       modalClose: "Cerrar",
+      scrollTop: "Volver arriba",
     }
   },
   en: {
@@ -218,6 +219,7 @@ const translations = {
       modalCopy: "Copy",
       modalSuccess: "Email copied to clipboard!",
       modalClose: "Close",
+      scrollTop: "Scroll to top",
     }
   },
 }

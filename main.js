@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       copyMsg.classList.add("hidden");
     }
   });
+  
   // Inicializar iconos de Lucide
   lucide.createIcons()
 
@@ -58,6 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Aplicar traducciones iniciales
   applyTranslations()
+
+  // Traducir botón de scroll
+  traducirScrollButton()
 
   // Ejecutar efectos adicionales
   addHoverEffects()
@@ -83,6 +87,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // if (emailButton) {
   //   emailButton.addEventListener("click", enviarEmail);
   // }
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+    } else {
+      scrollBtn.classList.add("opacity-0", "pointer-events-none");
+    }
+  });
+
+  scrollBtn?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 })
 
 // Cargar idioma guardado del localStorage
@@ -221,11 +238,20 @@ function downloadCV() {
   console.log("Se descargo el CV correctamente")
 }
 
-function enviarEmail() {
-  const destinatario = "pablofbc@gmail.com";
-  const asunto = encodeURIComponent("Consulta desde tu página");
-  const cuerpo = encodeURIComponent("Hola Pablo, me gustaría saber más sobre...");
+// function enviarEmail() {
+//   const destinatario = "pablofbc@gmail.com";
+//   const asunto = encodeURIComponent("Consulta desde tu página");
+//   const cuerpo = encodeURIComponent("Hola Pablo, me gustaría saber más sobre...");
 
-  window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+//   window.location.href = `mailto:${destinatario}?subject=${asunto}&body=${cuerpo}`;
+// }
+
+function traducirScrollButton() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (scrollBtn) {
+    const scrollTopText = getTranslation("contactEmail.scrollTop");
+    scrollBtn.setAttribute("title", scrollTopText);
+    scrollBtn.setAttribute("aria-label", scrollTopText);
+  }
 }
 
