@@ -13,6 +13,7 @@ const translations = {
         "Licenciado en Administración y Gestión con sólida formación técnica en electrónica y reparación de computadoras. Especialista en desarrollo web y móvil con experiencia en tecnologías modernas, análisis de datos y arquitecturas escalables.",
       contact: "Contactar",
       downloadCV: "Descargar CV",
+      fileName: "Pablo_Burgos_CV.pdf",
     },
     education: {
       title: "Formación Académica",
@@ -114,6 +115,7 @@ const translations = {
         "Bachelor's degree in Administration and Management with solid technical background in electronics and computer repair. Specialist in web and mobile development with experience in modern technologies, data analysis and scalable architectures.",
       contact: "Contact",
       downloadCV: "Download CV",
+      fileName: "Pablo_Burgos_Resume.pdf",
     },
     education: {
       title: "Academic Background",

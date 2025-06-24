@@ -31,6 +31,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ejecutar efectos adicionales
   addHoverEffects()
+
+  // Configurar el botón de descarga de CV
+  const downloadButton = document.getElementById("downloadCV")
+  if (downloadButton) {
+    downloadButton.addEventListener("click", downloadCV)
+  }
 })
 
 // Cargar idioma guardado del localStorage
@@ -151,7 +157,19 @@ function handleContactForm() {
 }
 
 // Función para descargar CV (placeholder)
+// function downloadCV() {
+//   // Aquí puedes agregar la lógica para descargar el CV
+//   console.log("Descargando CV...")
+// }
+
 function downloadCV() {
-  // Aquí puedes agregar la lógica para descargar el CV
-  console.log("Descargando CV...")
+  const url = 'https://pablofbc.github.io/CV.pdf'; // PDF es el mismo
+  const fileName = getTranslation("hero.fileName"); // Nombre según idioma
+
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
